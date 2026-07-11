@@ -1,0 +1,11 @@
+import cv2
+img = cv2.imread(r"C:/Users/ACER/Pictures/Screenshots/Screenshot 2026-05-13 103131.png")  
+if img is None:
+    print("Error: Image not found!")
+else:
+    blurred = cv2.GaussianBlur(img, (15, 15), 0)
+    cv2.imshow("Original Image", img)
+    cv2.imshow("Blurred Image", blurred)
+    cv2.imwrite("blurred_image.jpg", blurred)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
